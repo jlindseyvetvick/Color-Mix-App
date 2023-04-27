@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var blueLabel: UILabel!
+    
+    
     //  MARK: - Instance Properties
     
     
@@ -69,16 +74,19 @@ class ViewController: UIViewController {
         if redSwitch.isOn {
             // red = 1
             red = CGFloat(redSlider.value)
+            redLabel.text = "Red = \(redSlider.value)"
         }
         
         if greenSwitch.isOn {
             // green = 1
             green = CGFloat(greenSlider.value)
+            greenLabel.text = "Green = \(greenSlider.value)"
         }
             
         if blueSwitch.isOn {
            // blue = 1
             blue = CGFloat(blueSlider.value)
+            blueLabel.text = "Blue = \(blueSlider.value)"
         }
         
         // this is the value that colorView will access to make that view aware of our colors
@@ -86,6 +94,7 @@ class ViewController: UIViewController {
         
         // assign color to the colorView
         ColorView.backgroundColor = color
+                
         
         }
     
@@ -104,6 +113,7 @@ class ViewController: UIViewController {
     }
     
     //prevents sliders from working when corresponding switch is off
+   
     func updateSliderControls(){
         redSlider.isEnabled = redSwitch.isOn
         greenSlider.isEnabled = greenSwitch.isOn

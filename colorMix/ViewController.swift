@@ -74,19 +74,19 @@ class ViewController: UIViewController {
         if redSwitch.isOn {
             // red = 1
             red = CGFloat(redSlider.value)
-            redLabel.text = "Red = \(redSlider.value)"
+            redLabel.text = "Red = \(redSlider.value * 256)"
         }
         
         if greenSwitch.isOn {
             // green = 1
             green = CGFloat(greenSlider.value)
-            greenLabel.text = "Green = \(greenSlider.value)"
+            greenLabel.text = "Green = \(greenSlider.value * 256)"
         }
             
         if blueSwitch.isOn {
            // blue = 1
             blue = CGFloat(blueSlider.value)
-            blueLabel.text = "Blue = \(blueSlider.value)"
+            blueLabel.text = "Blue = \(blueSlider.value * 256)"
         }
         
         // this is the value that colorView will access to make that view aware of our colors
@@ -107,6 +107,10 @@ class ViewController: UIViewController {
         greenSlider.value = 1
         blueSlider.value = 1
        
+        redLabel.text = "Red = 0"
+        greenLabel.text = "Green = 0"
+        blueLabel.text = "Blue = 0"
+        
         updateUI()
         ColorView.backgroundColor = .white
         
